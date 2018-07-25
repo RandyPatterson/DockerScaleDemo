@@ -9,7 +9,7 @@ namespace WebAPI.Controllers
     [Route("api/hostname")]
     public class HostNameController : Controller
     {
-        // GET api/values
+        // GET api/hostname
         [HttpGet]
         public string Get()
         {

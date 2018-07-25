@@ -9,12 +9,14 @@
   },
   "profiles": {
     "IIS Express": {
-      "commandName": "IISExpress",
+      "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/hostname",
       "environmentVariables": {
+        "ASPNETCORE_URLS": "http://*:7337",
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "applicationUrl": "http://localhost:7337"
     },
     "WebAPI": {
       "commandName": "Project",
