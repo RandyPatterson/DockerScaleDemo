@@ -19,8 +19,8 @@ namespace WebApp.Controllers
         public async Task<IActionResult> Index()
         {
             //Get IP Address of API Host
-            //string url = "http://" + _configuration["ApiHost"] + "/api/Hostname";
-            string url = "http://localhost:7337/api/Hostname";
+            string url = "http://" + _configuration["ApiHost"] + "/api/Hostname";
+            
             ViewData["HostName"] = await _client.GetStringAsync(url);
 
             return View();
