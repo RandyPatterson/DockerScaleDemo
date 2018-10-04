@@ -1,0 +1,37 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: demowebapp
+spec:
+  selector:
+    app: demowebapp
+    tier: frontend
+  ports:
+    - protocol: "TCP"
+      port: 8080
+      targetPort: 8080
+  type: LoadBalancer
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: demowebapp
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: demowebapp
+        tier: frontend
+        track: stable
+    spec:
+      containers:
+        - name: demowebapp
+          image: "demo-webapp"
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: ApiHost
+              value: "demowebapi"
+          ports:
+            - name: http
+              containerPort: 80

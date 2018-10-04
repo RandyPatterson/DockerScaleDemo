@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -19,7 +20,13 @@ namespace WebApp.Controllers
         public async Task<IActionResult> Index()
         {
             string url = "http://" + _configuration["ApiHost"] + "/api/Hostname";
-            ViewData["HostName"] = await _client.GetStringAsync(url);
+            try {
+                ViewData["HostName"] = await _client.GetStringAsync(url);
+            } catch (Exception e) {
+                ViewData["HostName"] = e.Message;
+            }
+
+
 
             return View();
         }
