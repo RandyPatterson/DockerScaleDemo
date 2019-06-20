@@ -1,19 +1,20 @@
-FROM microsoft/aspnetcore:2.0 AS base
+FROM mcr.microsoft.com/dotnet/core/aspnet:2.1-stretch-slim AS base
 WORKDIR /app
 EXPOSE 80
 
-FROM microsoft/aspnetcore-build:2.0 AS build
+FROM mcr.microsoft.com/dotnet/core/sdk:2.1-stretch AS build
 WORKDIR /src
-COPY WebApp/WebApp.csproj WebApp/
-RUN dotnet restore WebApp/WebApp.csproj
+COPY ["WebApp/WebApp.csproj", "WebApp/"]
+RUN dotnet restore "WebApp/WebApp.csproj"
 COPY . .
-WORKDIR /src/WebApp
-RUN dotnet build WebApp.csproj -c Release -o /app
+WORKDIR "/src/WebApp"
+RUN dotnet build "WebApp.csproj" -c Release -o /app
 
 FROM build AS publish
-RUN dotnet publish WebApp.csproj -c Release -o /app
+RUN dotnet publish "WebApp.csproj" -c Release -o /app
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app .
 ENTRYPOINT ["dotnet", "WebApp.dll"]
+

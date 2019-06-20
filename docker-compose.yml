@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   webapp:
-    image: ${DOCKER_REGISTRY}/webapp
+    image: ${DOCKER_REGISTRY-}webapp
     build:
       context: .
       dockerfile: WebApp/Dockerfile
@@ -12,8 +12,7 @@ services:
       ApiHost: "webapi"
 
   webapi:
-    image: ${DOCKER_REGISTRY}/webapi
+    image: ${DOCKER_REGISTRY-}webapi
     build:
       context: .
       dockerfile: WebAPI/Dockerfile
-
