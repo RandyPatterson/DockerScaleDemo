@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2035
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp", "WebApp\WebApp.csproj", "{91F59597-FEC6-4476-ACCE-7B2CD4D8B117}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "WebAPI\WebAPI.csproj", "{B6ABCAC0-C1A8-44CC-8900-24CF99067AE0}"
-EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{44E8277D-2B0C-4F1B-8F01-D2074A38ECEE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7E78AFC7-E805-493F-BE45-1677493DEEA3}"
 	ProjectSection(SolutionItems) = preProject
@@ -15,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		frontend-webapp.yaml = frontend-webapp.yaml
 		kubernetes script.docx = kubernetes script.docx
 	EndProjectSection
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{0CE0C358-0EA1-42B4-8BE5-1CA60C84E84B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,10 +30,10 @@ Global
 		{B6ABCAC0-C1A8-44CC-8900-24CF99067AE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6ABCAC0-C1A8-44CC-8900-24CF99067AE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6ABCAC0-C1A8-44CC-8900-24CF99067AE0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{44E8277D-2B0C-4F1B-8F01-D2074A38ECEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{44E8277D-2B0C-4F1B-8F01-D2074A38ECEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{44E8277D-2B0C-4F1B-8F01-D2074A38ECEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{44E8277D-2B0C-4F1B-8F01-D2074A38ECEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CE0C358-0EA1-42B4-8BE5-1CA60C84E84B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CE0C358-0EA1-42B4-8BE5-1CA60C84E84B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CE0C358-0EA1-42B4-8BE5-1CA60C84E84B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CE0C358-0EA1-42B4-8BE5-1CA60C84E84B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
