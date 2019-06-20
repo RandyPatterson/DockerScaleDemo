@@ -2,13 +2,13 @@ version: '3.4'
 
 services:
   webapp:
-    image: ${DOCKER_REGISTRY-}webapp
+    image: ${DOCKER_REGISTRY-}demo-webapp
     build:
       context: .
       dockerfile: WebApp/Dockerfile
 
   webapi:
-    image: ${DOCKER_REGISTRY-}webapi
+    image: ${DOCKER_REGISTRY-}demo-webapi
     build:
       context: .
       dockerfile: WebAPI/Dockerfile
