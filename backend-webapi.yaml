@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
         - name: demowebapi
-          image: "demo-webapi"
+          image: "workshopdev/demo-webapi:latest"
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
