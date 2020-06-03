@@ -11,12 +11,16 @@ spec:
       port: 80
       targetPort: 80
 ---
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: demowebapi
 spec:
   replicas: 3
+  selector:
+    matchLabels:
+      app: demowebapp
+      tier: backend
   template:
     metadata:
       labels:

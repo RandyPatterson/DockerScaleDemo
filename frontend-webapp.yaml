@@ -8,17 +8,23 @@ spec:
     tier: frontend
   ports:
     - protocol: "TCP"
-      port: 80
+      port: 8080
       targetPort: 80
   type: LoadBalancer
   
 ---
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: demowebapp
+  labels:
+    app: demowebapp
 spec:
   replicas: 2
+  selector:
+    matchLabels:
+      app: demowebapp
+      tier: frontend
   template:
     metadata:
       labels:
