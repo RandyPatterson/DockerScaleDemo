@@ -7,7 +7,7 @@ spec:
     app: frontend
   ports:
     - protocol: "TCP"
-      port: 8088
+      port: 8022
       targetPort: 80
   type: LoadBalancer
   
@@ -19,7 +19,7 @@ metadata:
   labels:
     app: frontend
 spec:
-  replicas: 2
+  replicas: 5
   selector:
     matchLabels:
       app: frontend
@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
         - name: demowebapp
-          image: "demo-webapp:latest"
+          image: "rrptest.azurecr.io/demo-webapp:latest"
           imagePullPolicy: IfNotPresent
           env:
             - name: ApiHost
@@ -38,3 +38,5 @@ spec:
           ports:
             - name: http
               containerPort: 80
+      imagePullSecrets:
+        - name: regcred 
