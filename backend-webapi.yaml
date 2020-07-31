@@ -4,8 +4,7 @@ metadata:
   name: demowebapi
 spec:
   selector:
-    app: demowebapp
-    tier: backend
+    app: backend
   ports:
     - protocol: TCP
       port: 80
@@ -19,18 +18,15 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: demowebapp
-      tier: backend
+      app: backend
   template:
     metadata:
       labels:
-        app: demowebapp
-        tier: backend
-        track: stable
+        app: backend
     spec:
       containers:
         - name: demowebapi
-          image: "workshopdev/demo-webapi:latest"
+          image: "demo-webapi:latest"
           imagePullPolicy: IfNotPresent
           ports:
             - name: http

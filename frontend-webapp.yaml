@@ -4,11 +4,10 @@ metadata:
   name: demowebapp
 spec:
   selector:
-    app: demowebapp
-    tier: frontend
+    app: frontend
   ports:
     - protocol: "TCP"
-      port: 8080
+      port: 8088
       targetPort: 80
   type: LoadBalancer
   
@@ -18,23 +17,20 @@ kind: Deployment
 metadata:
   name: demowebapp
   labels:
-    app: demowebapp
+    app: frontend
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: demowebapp
-      tier: frontend
+      app: frontend
   template:
     metadata:
       labels:
-        app: demowebapp
-        tier: frontend
-        track: stable
+        app: frontend
     spec:
       containers:
         - name: demowebapp
-          image: "workshopdev/demo-webapp:latest"
+          image: "demo-webapp:latest"
           imagePullPolicy: IfNotPresent
           env:
             - name: ApiHost
