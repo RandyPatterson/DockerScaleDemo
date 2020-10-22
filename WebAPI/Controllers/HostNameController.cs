@@ -13,7 +13,7 @@ namespace WebAPI.Controllers
         [HttpGet]
         public string Get()
         {
-            return  Environment.MachineName;
+            return  $"{Environment.MachineName} / {System.Runtime.InteropServices.RuntimeInformation.OSDescription}";
         }
 
         

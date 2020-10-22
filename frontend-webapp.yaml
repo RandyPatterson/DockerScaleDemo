@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
         - name: demowebapp
-          image: "rrptest.azurecr.io/demo-webapp:latest"
+          image: "workshoprrp.azurecr.io/demo-webapp:latest"
           imagePullPolicy: IfNotPresent
           env:
             - name: ApiHost

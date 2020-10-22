@@ -24,9 +24,16 @@ spec:
       labels:
         app: backend
     spec:
+      tolerations:
+        - key: kubernetes.io/os
+          operator: Equal
+          value: windows
+          effect: NoSchedule
+      nodeSelector:
+        "beta.kubernetes.io/os": windows
       containers:
         - name: demowebapi
-          image: "rrptest.azurecr.io/demo-webapi:latest"
+          image: "workshoprrp.azurecr.io/demo-webapi:v1"
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
